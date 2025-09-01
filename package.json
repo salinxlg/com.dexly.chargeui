@@ -1,0 +1,43 @@
+{
+  "name": "chargecontroller",
+  "version": "8.4.0",
+  "description": "",
+  "main": "srx/com.config.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder"
+  },
+  "build": {
+
+    "appId": "com.dexly.charge",
+    "productName": "com.dexly.charge",
+    "files": [
+
+      "srx/**/*",
+      "assx/**/*",
+      "public/**/*",
+      "package.json"
+
+    ],
+    "win": {
+
+      "target": "nsis",
+      "icon": "assx/icon.ico"
+
+    }
+
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+
+    "electron": "^37.4.0",
+    "electron-builder": "^26.0.12"
+
+  }
+}
