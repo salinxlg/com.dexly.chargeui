@@ -1,0 +1,57 @@
+.magsafe-animation {
+  width: 150px;
+  height: 150px;
+  background-color: rgba(0, 122, 255, 0.7); /* A blue similar to Apple's */
+  border-radius: 50%; /* Makes it a circle */
+  position: relative;
+  overflow: hidden; /* Hides parts of the expanding inner circle */
+  animation: magsafe-pulse 1.5s ease-out forwards; /* Apply animation */
+}
+
+.magsafe-animation::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background-color: rgba(255, 255, 255, 0.5); /* Inner glow */
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: magsafe-expand 1.5s ease-out forwards; /* Inner expansion */
+}
+
+@keyframes magsafe-pulse {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  20% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes magsafe-expand {
+  0% {
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+  40% {
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+  }
+  100% {
+    width: 150%; /* Expands beyond the container */
+    height: 150%;
+    opacity: 0;
+  }
+}
